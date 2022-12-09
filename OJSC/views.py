@@ -11,21 +11,21 @@ from .models import Title, Employee
 from .serializers import TitleSerializer, EmployeeSerializer
 
 
-# class TitleNameCreate(generics.CreateAPIView):
-#     queryset = Title.objects.all()
-#     serializer_class = TitleSerializer
-#
-#
-# class EmployeeCreate(generics.CreateAPIView):
-#     queryset = Employee.objects.all()
-#     serializer_class = EmployeeSerializer
+class TitleNameCreate(generics.CreateAPIView):
+    queryset = Title.objects.all()
+    serializer_class = TitleSerializer
+
+
+class EmployeeNameCreate(generics.CreateAPIView):
+    queryset = Employee.objects.all()
+    serializer_class = EmployeeSerializer
 
 
 def get_employees(request):
-    emps = Employee.objects.all()
-    context = {
-        'emps': emps,
-    }
+    # emps = Employee.objects.all()
+    # context = {
+    #     'emps': emps,
+    # }
     return HttpResponse(f'Вы находитесь на странице для просмотра')
 
 
